@@ -4,24 +4,20 @@
   top: 0; left: 0; width: 100%; height: 100%;
   overflow: hidden;
   z-index: 0;
-  pointer-events: none;
 }
 .folha {
   position: absolute;
   background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
   animation: mover-folhas 15s linear infinite;
   opacity: 0.7;
-  will-change: transform;
 }
-
-/* Animação das folhas */
 @keyframes mover-folhas {
-  0%   { transform: translateY(-100px) rotate(0deg); }
+  0% { transform: translateY(-100px) rotate(0deg); }
   100% { transform: translateY(calc(100vh + 100px)) rotate(360deg); }
 }
 
-/* Estilo da logo */
+/* ESTILO DA LOGO */
 .logo-container {
   position: absolute;
   top: 10px; left: 20px;
@@ -29,16 +25,124 @@
   align-items: center;
   gap: 10px;
   z-index: 1;
-  flex-wrap: wrap;
 }
 .logo-img {
   height: 140px;
   width: 160px;
   filter: drop-shadow(1px 1px 3px rgba(0,0,0,0.3));
-  max-width: 100%;
 }
 
-/* Botões flutuantes */
+/* ESTILOS ORIGINAIS (INTACTOS) */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0fff4;
+  color: #2e7d32;
+}
+header {
+  background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+  padding: 30px 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+header p {
+  font-size: 1.2em;
+  margin: 10px 0 0;
+  opacity: 0.9;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #c8e6c9;
+  padding: 15px 10px;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #1b5e20;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+nav a:hover {
+  background-color: #a5d6a7;
+  color: white;
+}
+section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+section h2 {
+  text-align: center;
+  color: #1b5e20;
+  font-size: 2em;
+  margin-bottom: 30px;
+  position: relative;
+}
+section h2:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #81c784;
+}
+.servicos, .contato, .sobre-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+  margin-bottom: 40px;
+}
+footer {
+  background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+  margin-top: 40px;
+}
+.assinatura-footer {
+  margin-top: 10px; font-size: 0.9em;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+input, textarea, button {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  font-family: inherit;
+}
+button {
+  background-color: #66bb6a;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1em;
+}
+button:hover {
+  background-color: #4caf50;
+  transform: translateY(-2px);
+}
 .whatsapp-button,
 .instagram-button {
   position: fixed;
@@ -54,7 +158,6 @@
   gap: 8px;
   transition: all 0.3s ease;
   z-index: 100;
-  cursor: pointer;
 }
 .whatsapp-button {
   bottom: 20px;
@@ -71,8 +174,6 @@
 .instagram-button:hover {
   transform: scale(1.05);
 }
-
-/* Botão de mais info */
 .btn-mais-info {
   display: inline-block;
   margin: 20px auto 0;
@@ -84,15 +185,57 @@
   font-weight: bold;
   transition: all 0.3s ease;
   text-align: center;
-  cursor: pointer;
 }
 .btn-mais-info:hover {
   background-color: #66bb6a;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-
-/* Valores */
+.sobre-container {
+  position: relative;
+  overflow: hidden;
+}
+.sobre-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+}
+.sobre-text {
+  flex: 1;
+  min-width: 300px;
+}
+.sobre-highlight {
+  background-color: #e8f5e9;
+  padding: 25px;
+  border-radius: 10px;
+  margin: 30px 0;
+  border-left: 5px solid #4caf50;
+}
+.sobre-mission {
+  font-style: italic;
+  color: #1b5e20;
+  text-align: center;
+  font-size: 1.2em;
+  margin: 40px 0;
+  position: relative;
+}
+.sobre-mission:before, .sobre-mission:after {
+  content: '"';
+  font-size: 2em;
+  color: #81c784;
+  position: relative;
+  top: 10px;
+}
+.valores-titulo {
+  text-align: center; color:#2e7d32;
+}
+.valores-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
 .valor-item {
   background-color: #e8f5e9;
   padding: 15px 20px;
@@ -101,21 +244,44 @@
   min-width: 200px;
   text-align: center;
   transition: all 0.3s ease;
-  cursor: pointer;
 }
 .valor-item:hover {
   background-color: #c8e6c9;
   transform: translateY(-5px);
 }
+.valor-item h3 {
+  color: #2e7d32;
+  margin-top: 0;
+}
+.mapa-container {
+  text-align: center;
+}
 
-/* Responsivo */
 @media (max-width: 768px) {
+  header h1 {
+    font-size: 2em;
+  }
+  nav a {
+    margin: 5px;
+    font-size: 0.9em;
+  }
+  section {
+    padding: 30px 15px;
+  }
+  .sobre-content {
+    flex-direction: column;
+  }
+  .whatsapp-button,
+  .instagram-button {
+    right: 10px;
+    padding: 12px 15px;
+    font-size: 16px;
+  }
+  .instagram-button {
+    bottom: 75px;
+  }
   .logo-img {
     height: 90px;
     width: 110px;
-  }
-  .logo-container {
-    flex-direction: column;
-    align-items: flex-start;
   }
 }

@@ -1,24 +1,35 @@
+// Script para gerar folhas dinamicamente
 document.addEventListener('DOMContentLoaded', function() {
   const folhasContainer = document.getElementById('folhas');
   if (!folhasContainer) return;
 
-  const folhasCount = 30;
+  const folhasCount = 15;
   for (let i = 0; i < folhasCount; i++) {
     const folha = document.createElement('div');
     folha.classList.add('folha');
-
-    const size = Math.random() * 20 + 10; // 10px a 30px
+    // Tamanho aleatório entre 10px e 30px
+    const size = Math.random() * 20 + 10;
     folha.style.width = `${size}px`;
     folha.style.height = `${size}px`;
+    // Posição inicial aleatória
     folha.style.left = `${Math.random() * 100}%`;
-
-    const duration = Math.random() * 10 + 10; // 10s a 20s
-    const delay = Math.random() * 5; // 0s a 5s
-    folha.style.animationDuration = `${duration}s`;
-    folha.style.animationDelay = `${delay}s`;
-
-    folha.style.transform = `rotate(${Math.random() * 360}deg)`;
-
+    // Duração da animação aleatória
+    folha.style.animationDuration = `${Math.random() * 10 + 10}s`;
+    // Atraso inicial aleatório
+    folha.style.animationDelay = `${Math.random() * 5}s`;
     folhasContainer.appendChild(folha);
+  }
+});
+
+// Validação do formulário antes de enviar
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.querySelector("form");
+  if (form) {
+    form.addEventListener("submit", function(e) {
+      if (!form.checkValidity()) {
+        e.preventDefault();
+        alert("Por favor, preencha todos os campos corretamente!");
+      }
+    });
   }
 });
